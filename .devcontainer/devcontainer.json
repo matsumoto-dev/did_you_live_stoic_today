@@ -1,0 +1,28 @@
+// コンテナ上のVSCodeの設定
+{
+  // VSCode上で表示される名前
+  "name": "Did You Live Stoic Today?",
+  // docker-composeファイルのパス
+  "dockerComposeFile": "../docker-compose.yml",
+  // docker-composeのサービス
+  "service": "web",
+  // VSCodeのルートディレクトリ
+  "workspaceFolder": "/app",
+  // コンテナからホストに転送するポートリスト
+  "forwardPorts": [3000],
+  // VSCodeの設定等
+  "customizations": {
+    "vscode": {
+      // 拡張機能リスト(拡張機能IDを指定)
+      "extensions": [
+        "streetsidesoftware.code-spell-checker",
+        "dsznajder.es7-react-js-snippets",
+        "dbaeumer.vscode-eslint",
+        "eamodio.gitlens",
+        "MS-CEINTL.vscode-language-pack-ja",
+        "esbenp.prettier-vscode",
+        "vscode-icons-team.vscode-icons"
+      ]
+    }
+  }
+}
