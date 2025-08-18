@@ -1,13 +1,7 @@
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
 html,
@@ -17,26 +11,41 @@ body {
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  background: #ccc; /* 外側の背景（余白） */
+  display: flex;
+  justify-content: center;
 }
 
-* {
+.layout-container {
+  min-width: 600px; /* スマホっぽい最大幅 */
+  min-height: 100vh; /* 画面いっぱいに広げる */
+  margin: 0 auto; /* 中央寄せ */
+  background-color: white; /* 白背景 */
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.05); /* 少しだけ影をつけても◎ */
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  width: 100%;
+  background: white; /* コンテンツ部分の背景 */
+  padding: 1rem;
   box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+footer {
+  padding: 1rem;
+  text-align: center;
+  background-color: #f0f0f0;
+  color: #555;
 }
 
 a {
   color: inherit;
   text-decoration: none;
-}
-
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
 }
