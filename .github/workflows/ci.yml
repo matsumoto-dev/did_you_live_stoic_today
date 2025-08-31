@@ -1,0 +1,39 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test-and-lint:
+    runs-on: ubuntu-latest
+
+    steps:
+      # コードをチェックアウト
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # Node.js のバージョンをセットアップ
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        # with:
+        #   node-version: 20
+        #   cache: 'npm'
+
+      # 依存関係をインストール
+      - name: Install dependencies
+        run: npm ci
+
+      # Lint を実行（ESLint）
+      - name: Run Lint
+        run: npm run lint
+
+      # TypeScript の型チェック
+      - name: Type check
+        run: npm run type-check
+
+      # Jest などのテスト実行（設定していれば）
+      # - name: Run Tests
+      # run: npm test
