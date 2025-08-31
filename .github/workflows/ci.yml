@@ -32,7 +32,7 @@ jobs:
 
       # TypeScript の型チェック
       - name: Type check
-        run: npm run type-check
+        run: npm run tsc
 
       # Jest などのテスト実行（設定していれば）
       # - name: Run Tests
