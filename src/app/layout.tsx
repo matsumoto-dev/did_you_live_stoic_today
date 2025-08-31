@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Footer } from "@/components/Footer";
+import { ReduxProvider } from "@/store/provider";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -16,7 +17,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <div className="layout-container">
-          {children}
+          <ReduxProvider>{children}</ReduxProvider>
           <Footer />
         </div>
       </body>

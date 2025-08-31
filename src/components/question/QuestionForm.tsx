@@ -3,6 +3,9 @@
 import { useState } from "react";
 // import styles from "@/app/page.module.css";
 
+import { useSelector } from "react-redux";
+import { RootState } from "@/store";
+
 const URL = "api/question";
 
 type Question = {
@@ -15,6 +18,8 @@ export const QuestionForm = () => {
   const [questions, setQuestions] = useState<Question[]>([]);
   const [isRegenerate, setIsRegenerate] = useState<boolean>(false);
   const [comment, setComment] = useState<string>("");
+
+  const date = useSelector((store: RootState) => store.Date);
 
   /**
    * 質問取得
@@ -75,12 +80,13 @@ export const QuestionForm = () => {
   return (
     <div>
       {/* TODO：質問生成などの処理中のprogressモーダルをcomponentsで生成する */}
+      <h1>Did You Live stoic today?</h1>
+      <p>{date}</p>
       <button onClick={fetchQuestion}>
         {isRegenerate ? "再生成" : "生成"}
       </button>
 
       <form onSubmit={handleSubmit}>
-        <h1>Did You Live stoic today?</h1>
         <div></div>
         <p>Questions</p>
         {questions.map((question) => {
