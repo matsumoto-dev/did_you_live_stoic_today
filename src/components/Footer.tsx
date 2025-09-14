@@ -2,8 +2,8 @@
 import Link from "next/link";
 
 const ROUTES = [
-  { id: 1, title: "question" },
-  { id: 2, title: "calendar" },
+  { id: 1, title: "calendar" },
+  { id: 2, title: "list" },
 ];
 
 export const Footer = () => {
