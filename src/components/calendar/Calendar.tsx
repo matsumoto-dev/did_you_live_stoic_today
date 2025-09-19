@@ -21,7 +21,6 @@ export const Calendar = () => {
     const strDate = date.toLocaleString();
 
     dispatch(setDate(strDate));
-    console.log(strDate);
   };
 
   return (
