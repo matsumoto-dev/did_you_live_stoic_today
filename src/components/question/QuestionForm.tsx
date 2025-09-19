@@ -5,8 +5,6 @@ import { useState } from "react";
 import { useSelector } from "react-redux";
 import { RootState } from "@/store";
 
-const URL = "api/question";
-
 type Question = {
   id: number;
   text: string;
@@ -19,15 +17,15 @@ export const QuestionForm = () => {
   const [comment, setComment] = useState<string>("");
 
   const date = useSelector((store: RootState) => store.Date);
-
+  const url = process.env.NEXT_PUBLIC_GET_QUESTION_API_URL ?? "";
   /**
    * 質問取得
    */
-  const fetchQuestion = async () => {
+  const fetchQuestions = async () => {
     setIsRegenerate(true);
     // TODO:ローディングモーダルを表示
     try {
-      const res = await fetch(URL);
+      const res = await fetch(url);
       const data = await res.json();
 
       setQuestions(data);
@@ -60,7 +58,7 @@ export const QuestionForm = () => {
 
     try {
       // 回答を送信
-      const res = await fetch(URL, {
+      const res = await fetch(url, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ questions }),
@@ -81,7 +79,7 @@ export const QuestionForm = () => {
       {/* TODO：質問生成などの処理中のprogressモーダルをcomponentsで生成する */}
       <h1>Did You Live stoic today?</h1>
       <p>{date}</p>
-      <button onClick={fetchQuestion}>
+      <button onClick={fetchQuestions}>
         {isRegenerate ? "再生成" : "生成"}
       </button>
 
