@@ -1,5 +1,8 @@
 "use Client";
+
 import Link from "next/link";
+
+import "./Footer.css";
 
 const ROUTES = [
   { id: 1, title: "calendar" },

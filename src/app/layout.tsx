@@ -19,7 +19,6 @@ export default function RootLayout({
         <div className="layout-container">
           <ReduxProvider>{children}</ReduxProvider>
           {/* TODO: list形式の表示画面が未実装のため、footerは非表示にする */}
-          {/* <Footer /> */}
         </div>
       </body>
     </html>
