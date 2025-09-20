@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
+
 import "./globals.css";
-// import { Footer } from "@/components/Footer";
+import { Header } from "@/components/Header/Header";
 import { ReduxProvider } from "@/store/provider";
 
 export const metadata: Metadata = {
@@ -17,6 +18,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <div className="layout-container">
+          <Header />
           <ReduxProvider>{children}</ReduxProvider>
           {/* TODO: list形式の表示画面が未実装のため、footerは非表示にする */}
         </div>
