@@ -77,7 +77,6 @@ export const QuestionForm = () => {
   return (
     <div>
       {/* TODO：質問生成などの処理中のprogressモーダルをcomponentsで生成する */}
-      <h1>Did You Live stoic today?</h1>
       <p>{date}</p>
       <button onClick={fetchQuestions}>
         {isRegenerate ? "再生成" : "生成"}

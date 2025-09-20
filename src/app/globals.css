@@ -11,24 +11,24 @@ body {
 }
 
 body {
-  background: #ccc; /* 外側の背景（余白） */
+  background: #ccc;
   display: flex;
   justify-content: center;
 }
 
 .layout-container {
-  min-width: 600px; /* スマホっぽい最大幅 */
-  min-height: 100vh; /* 画面いっぱいに広げる */
-  margin: 0 auto; /* 中央寄せ */
-  background-color: white; /* 白背景 */
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.05); /* 少しだけ影をつけても◎ */
+  width: 100%;
+  max-width: 480px;
+  min-height: 100vh;
+  margin: 0 auto;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
   display: flex;
   flex-direction: column;
 }
 
 main {
   width: 100%;
-  background: white; /* コンテンツ部分の背景 */
+  background: white;
   padding: 1rem;
   box-sizing: border-box;
   flex: 1;
